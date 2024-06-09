@@ -10,6 +10,14 @@ describe("Retorna qual pacote de acordo ao número de horas", () => {
         expect(result).toBe("pacote_basico")
 
     })
+    test("Retorna um pacote básico", () => {
+
+        const totalHoras = 1;
+        const result = calcularPacote(totalHoras);
+
+        expect(result).toBe("pacote_basico")
+
+    })
 
     test("retorna se é um pacote intermediario", () => {
         const totalHoras = 51
