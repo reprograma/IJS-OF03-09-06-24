@@ -24,10 +24,11 @@ describe("Retorna qual pacote de acordo ao número de horas", () => {
         expect(result).toBe("pacote_premium")
     })
 
-    test("retornar o valor básico", () => {
-        const totalHoras = 50
+    test("retorna se é um pacote premium", () => {
+        const totalHoras = 108
         const result = calcularPacote(totalHoras)
 
-        expect(result).toBe("pacote_basico")
+        expect(result).toBe("pacote_premium")
     })
+  
 })
