@@ -16,7 +16,7 @@ describe("Cálculo de quantidade de horas por projeto", () => {
              'ssr'
         ];
 
-        //açao
+        //ação
         const result = calcularHorasDeProjeto(listaDeFuncionalidades);
 
         //verificação

@@ -32,12 +32,30 @@ describe("Retorna qual pacote de acordo com o número de horas", () => {
         expect(result).toBe("pacote_premium");
     })
 
-    test("", () => {
+    test("retorna qual é o pacote para a quantidade específica de 50 horas", () => {
 
         const totalHoras = 50;
 
         const result = calcularPacote(totalHoras);
 
         expect(result).toBe("pacote_basico");
+    })
+
+    test("retorna qual é o pacote para a quantidade específica de 100 horas", () => {
+
+        const totalHoras = 100;
+
+        const result = calcularPacote(totalHoras);
+
+        expect(result).toBe("pacote_intermediario");
+    })
+
+    test("retorna o pacote para até 200 horas", () => {
+        for (totalHoras = 101; totalHoras <= 200; totalHoras++) {
+
+            const result = calcularPacote(totalHoras);
+
+            expect(result).toBe("pacote_premium");
+        }
     })
 });

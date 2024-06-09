@@ -27,7 +27,5 @@ describe("Validar valor total do projeto", () => {
 
         //verificação
         expect(result).toBe(3696);
-
-
     })
 })
