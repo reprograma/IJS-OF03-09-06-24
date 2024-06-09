@@ -41,7 +41,7 @@ describe("Retorna qual o pacote de acordo com o número de horas", () => {
     expect(resultado).toBe("pacote_intermediario");
   });
 
-  test("deve retornar undefined para horas acima do limite de qualquer pacote", () => {
+  test("Retorna se é um pacote premium", () => {
     const totalHoras = 199;
 
     const resultado = calcularPacote(totalHoras);
@@ -49,11 +49,19 @@ describe("Retorna qual o pacote de acordo com o número de horas", () => {
     expect(resultado).toBe("pacote_premium");
   });
 
-  test("deve retornar undefined para horas acima do limite de qualquer pacote", () => {
+  test("Retorna se é um pacote premium", () => {
     const totalHoras = 200;
 
     const resultado = calcularPacote(totalHoras);
 
     expect(resultado).toBe("pacote_premium");
+  });
+
+  test("Retorna undefined quando passada uma quantidade acima dos valores definidos", () => {
+    const totalHoras = 201;
+
+    const resultado = calcularPacote(totalHoras);
+
+    expect(resultado).toBe(undefined);
   });
 });
