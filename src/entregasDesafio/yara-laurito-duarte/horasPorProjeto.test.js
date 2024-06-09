@@ -1,6 +1,7 @@
 const {
   calcularHorasDeProjeto,
 } = require("../../dominio/calculadora/Projeto/horasPorProjeto");
+const { HORAS_POR_FUNCIONALIDADE } = require("../../dominio/calculadora/constantes/constantes")
 
 describe("Cálculo da quantidade de horas por projeto", () => {
   test("Dada uma lista de funcionalidades, valida quantas horas por projeto", () => {
@@ -16,7 +17,16 @@ describe("Cálculo da quantidade de horas por projeto", () => {
 
     const resultado = calcularHorasDeProjeto(listaDeFuncionalidades);
 
-    expect(resultado).toBe(72);
+    const horasEsperadas =
+    HORAS_POR_FUNCIONALIDADE["setup"] +
+    HORAS_POR_FUNCIONALIDADE["formulario"] +
+    HORAS_POR_FUNCIONALIDADE["construcao_1_pagina"] +
+    HORAS_POR_FUNCIONALIDADE["construcao_1_pagina"] +
+    HORAS_POR_FUNCIONALIDADE["construcao_1_pagina"] +
+    HORAS_POR_FUNCIONALIDADE["ssr"] +
+    HORAS_POR_FUNCIONALIDADE["responsividade"];
+
+    expect(resultado).toBe(horasEsperadas);
   });
 
   test("Calcula as horas dada uma lista com funcionalidades iguais", () => {
@@ -30,7 +40,14 @@ describe("Cálculo da quantidade de horas por projeto", () => {
 
     const resultado = calcularHorasDeProjeto(listaDeFuncionalidades);
 
-    expect(resultado).toBe(80);
+    const horasEsperadas =
+    HORAS_POR_FUNCIONALIDADE["responsividade"] +
+    HORAS_POR_FUNCIONALIDADE["responsividade"] +
+    HORAS_POR_FUNCIONALIDADE["responsividade"] +
+    HORAS_POR_FUNCIONALIDADE["responsividade"] +
+    HORAS_POR_FUNCIONALIDADE["responsividade"];
+
+    expect(resultado).toBe(horasEsperadas);
   });
 
   test("Calcula as horas quando não é passada nenhuma funcionalidade", () => {
