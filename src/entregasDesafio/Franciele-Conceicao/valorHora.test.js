@@ -22,13 +22,24 @@ describe("calcularValorPorHora", () => {
 
         expect(calcularValorPorHora(rendaMensal)).toBe(result);
     })
-    // test("forçar o teste falar", () => {
+    
+    test("Calcula o valor por hora para um valor baixo de renda mensal", () => {
+        const rendaMensal = 2000;
+        const horasPorDia = 8;
+        const diasPorMes = 22;
+        const resultadoEsperado = Math.ceil(rendaMensal / (horasPorDia * diasPorMes));
 
-    //     const rendaMensal = 5000;
-    //     const result = 30;
+        expect(calcularValorPorHora(rendaMensal)).toBe(resultadoEsperado);
+    });
 
-    //     expect(calcularValorPorHora(rendaMensal)).toBe(result);
-    // })
+    test("Calcula o valor por hora com uma renda mensal diferente", () => {
+        const rendaMensal = 6000;
+        const horasPorDia = 8;
+        const diasPorMes = 22;
+        const resultadoEsperado = Math.ceil(rendaMensal / (horasPorDia * diasPorMes));
+
+        expect(calcularValorPorHora(rendaMensal)).toBe(resultadoEsperado);
+    });
 
 })
 
