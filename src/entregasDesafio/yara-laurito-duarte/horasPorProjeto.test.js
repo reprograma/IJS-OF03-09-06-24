@@ -75,7 +75,12 @@ describe("Cálculo da quantidade de horas por projeto", () => {
 
     const resultado = calcularHorasDeProjeto(listaDeFuncionalidades);
 
-    expect(resultado).toBe(40);
+    const horasEsperadas =
+    HORAS_POR_FUNCIONALIDADE["setup"] +
+    HORAS_POR_FUNCIONALIDADE["integracao_mailchimp"] +
+    HORAS_POR_FUNCIONALIDADE["otimizacao_seo"];
+
+    expect(resultado).toBe(horasEsperadas);
   });
 
   test("Deve retornar erro ao tentar calcular uma funcionalidade que não existe", () => {
