@@ -18,4 +18,8 @@ describe('verificando se calcularValorPorHora está funcionando', () => {
     test('Testando funcionalidade com o resultado da divisão um número decimal', () => {
         expect(valorHoraFunction.calcularValorPorHora(valorNaoDivisivelPorHorasTrabalhadasResultado)).toBe(calculoDasHorasResultadoNaoDivisivel);
     });
+
+    test('Testando passando valores nulos', () => {
+        expect(valorHoraFunction.calcularValorPorHora(null)).toBe(0);
+    });
 });

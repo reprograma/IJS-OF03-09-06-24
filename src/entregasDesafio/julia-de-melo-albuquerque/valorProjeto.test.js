@@ -8,9 +8,6 @@ const valorHoraTest = 100;
 
 jest.mock("../../dominio/calculadora/Projeto/pacote.js");
 
-
-
-
 describe('Verificando se a função calcularValorBaseProjeto está calculando de forma correta (pacote básico)', () => {
 
     const resultadoEsperadoBasico = 1760;
