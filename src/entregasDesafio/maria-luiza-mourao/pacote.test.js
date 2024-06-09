@@ -52,5 +52,26 @@ describe ("Calcula o pacote de acordo com o número de horas", () => {
     
     });
 
+    test("Testa valores mínimos permitidos", () => {
+        const totalHoras = 0;
+        const resultado = calcularPacote(totalHoras);
+    
+        expect(resultado).toBe("pacote_basico");
+    });
+    
+    test("Testa valores máximos permitidos", () => {
+        const totalHoras = 200;
+        const resultado = calcularPacote(totalHoras);
+    
+        expect(resultado).toBe("pacote_premium");
+    });
+
+    test("Testa valores fora do intervalo esperado (mais de 200h)", () => {
+        const totalHoras = 201;
+        const resultado = calcularPacote(totalHoras);
+    
+        expect(resultado).toBeUndefined();
+    });
+
 })
 
