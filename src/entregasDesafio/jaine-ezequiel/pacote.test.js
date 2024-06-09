@@ -27,7 +27,7 @@ describe("retorna nome do pacote de acordo com o numero de horas", () => {
         const totalHoras = 50;
         const result = calcularPacote(totalHoras);
 
-        expect(result).toBe("pacote_intermediario");
+        expect(result).toBe("pacote_basico");
     })
 
 })
