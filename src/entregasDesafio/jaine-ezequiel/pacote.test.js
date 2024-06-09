@@ -23,8 +23,29 @@ describe("retorna nome do pacote de acordo com o numero de horas", () => {
         expect(result).toBe("pacote_premium");
     })
 
+    test("retorna se é o pacote premium", () => {
+        const totalHoras = 200;
+        const result = calcularPacote(totalHoras);
+
+        expect(result).toBe("pacote_premium");
+    })
+
+    test("retorna tipo de pacote quando for 100 horas", () => {
+        const totalHoras = 100;
+        const result = calcularPacote(totalHoras);
+
+        expect(result).toBe("pacote_intermediario");
+    })
+
     test("retorna tipo de pacote quando for 50 horas", () => {
         const totalHoras = 50;
+        const result = calcularPacote(totalHoras);
+
+        expect(result).toBe("pacote_basico");
+    })
+
+    test("retorna tipo de pacote quando o valor de horas for zero", () => {
+        const totalHoras = 0;
         const result = calcularPacote(totalHoras);
 
         expect(result).toBe("pacote_basico");
