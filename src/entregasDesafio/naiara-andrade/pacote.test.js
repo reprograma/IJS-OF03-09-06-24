@@ -30,6 +30,13 @@ describe("Retorna qual o pacote de acordo com o número de horas", ()=> {
         expect(resultado).toBe("pacote_basico");
     });
 
+    test("Retorna se é pacote intermediario com valor de horas 50.1", () => {
+        const totalHoras = 50.1;
+        const resultado = calcularPacote(totalHoras);
+
+        expect(resultado).toBe("pacote_intermediario");
+    });
+
     test("Retorna se é pacote intermediário com valor de horas 100", () => {
         const totalHoras = 100;
         const resultado = calcularPacote(totalHoras);
@@ -44,13 +51,19 @@ describe("Retorna qual o pacote de acordo com o número de horas", ()=> {
         expect(resultado).toBe("pacote_premium");
     });
 
-    // Erro: valor acima de 200 não permitido, mas não tem tratamento
-    // test("Retorna de erro com valor de horas acima de 200", () => {
-    //     const totalHoras = 220;
-    //     const resultado = calcularPacote(totalHoras);
+    test("Retorna se é pacote intermediário com valor de horas 99.99", () => {
+        const totalHoras = 99.99999;
+        const resultado = calcularPacote(totalHoras);
 
-    //     expect(resultado).toBe("pacote_premium");
-    // });
+        expect(resultado).toBe("pacote_intermediario");
+    });
+
+    test("Retorna se é pacote premium com valor de horas 100.0000001", () => {
+        const totalHoras = 100.0000001;
+        const resultado = calcularPacote(totalHoras);
+
+        expect(resultado).toBe("pacote_premium");
+    });
 
     test("Retorna se é pacote basico com valor de horas negativo", () => {
         const totalHoras = -10;
@@ -73,22 +86,6 @@ describe("Retorna qual o pacote de acordo com o número de horas", ()=> {
         expect(resultado).toBe("pacote_basico");
     });
 
-    // Retorna pacote básico com valor nulo
-    // test("Retorna se é pacote basico com valor de horas nulas", () => {
-    //     const totalHoras = null;
-    //     const resultado = calcularPacote(totalHoras);
-
-    //     expect(resultado).toBe("pacote_basico");
-    // });
-
-    // Erro: Retorna pacote básico com valor nulo
-    // test("Retorna se é pacote basico com valor de horas nulas", () => {
-    //     const totalHoras = null;
-    //     const resultado = calcularPacote(totalHoras);
-
-    //     expect(resultado).toBe("pacote_intermediario");
-    // });
-
     // Aceita campo vazio como pacote báśico, sem tratamento
     test("Retorna se é pacote basico com campo vazio", () => {
         const totalHoras = "";
@@ -103,14 +100,5 @@ describe("Retorna qual o pacote de acordo com o número de horas", ()=> {
 
         expect(resultado).toBe("pacote_basico");
     });
-
-    // Erro: não tem tratamento para string
-    // test("Retorna se é pacote basico com campo em formato de string", () => {
-    //     const totalHoras = "dez";
-    //     const resultado = calcularPacote(totalHoras);
-
-    //     expect(resultado).toBe("pacote_basico");
-    // });
-
 
 });
