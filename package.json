@@ -9,7 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "jest": "^28.1.2"
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^28.1.3"
   }
 }
