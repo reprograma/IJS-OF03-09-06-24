@@ -28,11 +28,27 @@ describe ("Calcula o pacote de acordo com o número de horas", () => {
     
     });
 
-    test ("Qual tipo de pacote é igual a 50", () => {
+    test ("Teste para pacotes exatamente iguais a 50h", () => {
         const totalHoras = 50;
         const result = calcularPacote(totalHoras);
 
+        expect(result).toBe("pacote_basico");
+    
+    });
+
+    test ("Teste para pacotes exatamente iguais a 100h", () => {
+        const totalHoras = 100;
+        const result = calcularPacote(totalHoras);
+
         expect(result).toBe("pacote_intermediario");
+    
+    });
+
+    test ("Teste para pacotes exatamente até 200h", () => {
+        const totalHoras = 199;
+        const result = calcularPacote(totalHoras);
+
+        expect(result).toBe("pacote_premium");
     
     });
 
