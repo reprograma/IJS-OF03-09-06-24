@@ -8,7 +8,7 @@ describe("validar valor total do projeto", () => {
         pacote.calcularPacote.mockReturnValue("pacote_basico");
     });
     test ("Valida valor total do projeto de acordo com as funcionalidades e valor hora da desenvolvedora", () => {
-        //setup
+        
         const funcionalidades = ["setup",
         "responsividade",  
         "construcao_1_pagina",  
