@@ -39,5 +39,28 @@ describe("retatona qual o pacote de acordo com o número de horas", () => {
 
     expect(resultado).toBe("pacote_premium");
   });
-  
+
+  it("should return undefined when value its bigger than 200", () => {
+    const totalHoras = 201;
+
+    const resultado = calcularPacote(totalHoras);
+
+    expect(resultado).toBe(undefined);
+  });
+
+  it("should return undefine when its a negative numbers", () => {
+    const totalHoras = -1;
+
+    const resultado = calcularPacote(totalHoras);
+
+    expect(resultado).toBe(undefined);
+  });
+
+  it("should return null when its a null value", () => {
+    const totalHoras = null;
+
+    const resultado = calcularPacote(totalHoras);
+
+    expect(resultado).toBe(null);
+  });
 });
